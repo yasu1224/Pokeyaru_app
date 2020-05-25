@@ -15,3 +15,6 @@ rarity:string
 name:string
 place:string
 release:date
+
+## genre
+name:string
