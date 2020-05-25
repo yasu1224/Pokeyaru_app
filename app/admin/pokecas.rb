@@ -53,4 +53,30 @@ ActiveAdmin.register Pokeca do
     end
     actions
   end
+
+  show do
+    attributes_table do
+      row '画像' do |pokeca|
+        image_tag(pokeca.image.url, width: "250px")
+      end
+      row 'カード名' do |pokeca|
+        pokeca.name
+      end
+      row '相場' do |pokeca|
+        pokeca.price
+      end
+      row '詳細' do |pokeca|
+        pokeca.detail
+      end
+      row '拡張ボックス名' do |pokeca|
+        pokeca.box.name
+      end
+      row 'ジャンル' do |pokeca|
+        pokeca.genre.name
+      end
+      row 'レアリティ' do |pokeca|
+        pokeca.rare.rarity
+      end
+    end
+  end
 end
