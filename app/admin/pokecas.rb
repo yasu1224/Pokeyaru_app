@@ -31,7 +31,7 @@ ActiveAdmin.register Pokeca do
     selectable_column
     id_column
     column '画像' do |pokeca|
-      pokeca.image
+      image_tag(pokeca.image.url, width: "50px")
     end
     column 'カード名' do |pokeca|
       pokeca.name
