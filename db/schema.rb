@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_071300) do
+ActiveRecord::Schema.define(version: 2020_05_25_054229) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -38,4 +38,42 @@ ActiveRecord::Schema.define(version: 2020_05_23_071300) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "boxes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "place"
+    t.date "release"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokecas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.string "name"
+    t.text "detail"
+    t.string "price"
+    t.bigint "box_id"
+    t.bigint "genre_id"
+    t.bigint "rare_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["box_id"], name: "index_pokecas_on_box_id"
+    t.index ["genre_id"], name: "index_pokecas_on_genre_id"
+    t.index ["rare_id"], name: "index_pokecas_on_rare_id"
+  end
+
+  create_table "rares", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "rarity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "pokecas", "boxes"
+  add_foreign_key "pokecas", "genres"
+  add_foreign_key "pokecas", "rares"
 end
