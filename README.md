@@ -4,6 +4,7 @@
 image:string
 name:string
 detail:text
+price:string
 box:references
 genre:references
 rare:references

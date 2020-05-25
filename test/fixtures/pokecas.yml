@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyString
+  name: MyString
+  detail: MyText
+  box: one
+  genre: one
+  rare: one
+
+two:
+  image: MyString
+  name: MyString
+  detail: MyText
+  box: two
+  genre: two
+  rare: two

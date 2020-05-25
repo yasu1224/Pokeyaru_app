@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pokecas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Detail</th>
+      <th>Box</th>
+      <th>Genre</th>
+      <th>Rare</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokecas.each do |pokeca| %>
+      <tr>
+        <td><%= pokeca.image %></td>
+        <td><%= pokeca.name %></td>
+        <td><%= pokeca.detail %></td>
+        <td><%= pokeca.box %></td>
+        <td><%= pokeca.genre %></td>
+        <td><%= pokeca.rare %></td>
+        <td><%= link_to 'Show', pokeca %></td>
+        <td><%= link_to 'Edit', edit_pokeca_path(pokeca) %></td>
+        <td><%= link_to 'Destroy', pokeca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pokeca', new_pokeca_path %>

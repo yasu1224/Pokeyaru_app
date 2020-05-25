@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @pokeca.image %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokeca.name %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @pokeca.detail %>
+</p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @pokeca.box %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @pokeca.genre %>
+</p>
+
+<p>
+  <strong>Rare:</strong>
+  <%= @pokeca.rare %>
+</p>
+
+<%= link_to 'Edit', edit_pokeca_path(@pokeca) %> |
+<%= link_to 'Back', pokecas_path %>
